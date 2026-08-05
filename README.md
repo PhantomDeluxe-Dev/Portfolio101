@@ -13,7 +13,7 @@ The project is built to experiment with **UI design, window management, and desk
 ## 🌐 Live Demo
 
 👉 **Try Mr.Fernando OS in your browser:**
-[View my live portfolio here!](https://andrew-fernando-15.github.io/Portfolio-3/)
+[View my live portfolio here!](https://PhantomDeluxe-Dev.github.io/Portfolio101/)
 
 ---
 
