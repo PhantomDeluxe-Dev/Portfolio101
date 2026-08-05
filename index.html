@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr.Fernando - Exclusive Edition</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+ body {
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    transform: scale(1.4);
+    transform-origin: center center;
+    transition: transform 3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  body.zoom-out {
+      transform: scale(1);
+  }
+
+  /* ── DOT CONTAINER ── */
+  #dot-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+                height 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+  }
+
+  #dot-wrap.grow {
+    width: 130px;
+    height: 130px;
+  }
+
+  #dot-outer {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  #dot-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    background: #000;
+    border-radius: 50%;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #dot-inner.fill {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* ── BRAND WRAPPER ── */
+  #brand {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 5;
+  }
+
+  #brand.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  #brand.slide-left {
+    transform: translate(-50%, -50%);
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ── TOP ROW ── */
+  #top-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  /* ── LOGO ── */
+  #logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow:
+      0 0 18px 4px rgba(255,255,255,0.25),
+      0 0 40px 10px rgba(255,255,255,0.12),
+      0 0 80px 20px rgba(255,255,255,0.06);
+  }
+
+  /* ── TEXT BLOCK ── */
+  #text-block {
+    overflow: hidden;
+    width: 0;
+    opacity: 0;
+    white-space: nowrap;
+    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.5s ease 0.2s;
+  }
+
+  #text-block.reveal {
+    width: 300px;
+    opacity: 1;
+  }
+
+  #name {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+
+  #tagline {
+    font-size: 16px;
+    font-weight: 400;
+    color: #aaa;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  /* ── LOADER ROW ── */
+  #loader-row {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #loader-row.show {
+    opacity: 1;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-loader {
+    width: 420px;
+    background: rgba(236, 236, 238, 0.2);
+    height: 6px;
+    border-radius: 7px;
+  }
+
+  .progress {
+    width: 1px;
+    height: 6px;
+    border-radius: 7px;
+    background: rgb(255, 255, 255);
+    animation: loading1274 2s ease infinite;
+  }
+
+  @keyframes loading1274 {
+    0%   { width: 0%; }
+    10%  { width: 10%; }
+    50%  { width: 40%; }
+    60%  { width: 60%; }
+    100% { width: 100%; }
+  }
+
+  .boot-fullscreen-hint {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="boot-fullscreen-hint">
+  <b id="caution">Not optimized for mobile; best viewed on a PC or laptop.</b>
+  <br>For the best experience,<br> press F11 to enter full screen.
+</div>
+
+<div id="dot-wrap">
+  <div id="dot-outer"></div>
+  <div id="dot-inner"></div>
+</div>
+
+<div id="brand">
+  <div id="top-row">
+    <img id="logo" src="assets/images/logo.png" alt="AF Logo">
+    <div id="text-block">
+      <div id="name">Mr.Fernando</div>
+      <div id="tagline">Exclusive Edition</div>
+    </div>
+  </div>
+
+  <div id="loader-row">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+      <span id="loading-text" style="color:#aaa; font-size:13px; letter-spacing:3px; text-transform:uppercase; font-family:Georgia,serif; font-style:italic;">Loading...</span>
+      <div class="progress-loader">
+        <div class="progress"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const dotWrap   = document.getElementById('dot-wrap');
+  const dotInner  = document.getElementById('dot-inner');
+  const brand     = document.getElementById('brand');
+  const textBlock = document.getElementById('text-block');
+  const loaderRow = document.getElementById('loader-row');
+
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function runIntro() {
+
+    // ZOOM OUT — starts immediately
+    document.body.classList.add('zoom-out');
+
+    // PHASE 1 — small white dot
+    await delay(400);
+
+    // PHASE 2 — white dot grows
+    dotWrap.classList.add('grow');
+    await delay(950);
+
+    // PHASE 3 — black fills from center
+    dotInner.classList.add('fill');
+    await delay(620);
+
+    // PHASE 4 — dot hides, logo appears
+    dotWrap.style.transition = 'opacity 0.3s ease';
+    dotWrap.style.opacity = '0';
+    brand.classList.add('visible');
+
+    // PHASE 5 — logo sits briefly
+    await delay(700);
+
+    // PHASE 6 — slide left, text reveals
+    brand.classList.add('slide-left');
+    await delay(250);
+    textBlock.classList.add('reveal');
+
+    // PHASE 7 — progress bar
+    await delay(800);
+    loaderRow.classList.add('show');
+  }
+
+  runIntro();
+
+  window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      window.location.href = "lockscreen.html";
+    }, 12000);
+  });
+</script>
+
+</body>
+</html>

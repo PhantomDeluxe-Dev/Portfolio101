@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lockscreen</title>
+  <link rel="stylesheet" href="css/lockscreen.css">
+</head>
+<body>
+
+  <div class="background"></div>
+  <div id="petal-container"></div>
+  <div id="darkLayer"></div>
+
+  <!-- 🔥 CLOCK (OUTSIDE UI - ALWAYS VISIBLE) -->
+  <div class="clockBox">
+    <div id="day"></div>
+    <div id="date"></div>
+    <div id="time"></div>
+  </div>
+
+  <div id="ui">
+
+    <!-- LOGO SCREEN -->
+    <div id="logoScreen">
+      <img id="logo" src="assets/images/User-0.png" alt="Samurai Logo">
+      <p class="tap-hint">ANDREW FERNANDO</p>
+    </div>
+
+    <!-- PASSWORD AREA -->
+    <div id="passwordArea" style="display: none; margin-top: 10px;">
+      <div class="group">
+        <input id="passwordInput" class="input" type="password" placeholder="Enter password">
+      </div>
+      <div id="message" style="margin-top: 5px;"></div>
+      <div style="margin-top: 5px;">
+        <button id="enterBtn" class="action-btn">Enter</button>
+        <button id="backBtn" class="action-btn">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/lockscreen.js"></script>
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mr.Fernando OS</title>
+    <link rel="stylesheet" href="css/homescreen.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<div class="desktop">
+
+    <div class="clockBox">
+        <h1 id="day">SUNDAY</h1>
+        <p id="date">10 MARCH, 2024</p>
+        <p id="time">12:00 AM</p>
+    </div>
+
+    <div class="icon-column">
+
+        <button class="icon" data-window="grow-window" data-type="app">
+            <img src="assets/icons/flower.png" alt="Click To Grow Flower" />
+            <span>Click To Grow</span>
+        </button>
+
+        <button class="icon" data-window="blog-window" data-type="app">
+            <img src="assets/icons/blog.png">
+            <span>Blog</span>
+        </button>
+
+        <button class="icon" data-window="cv-window" data-type="app">
+            <img src="assets/icons/pdf.png" alt="AndrewFernandoCV.pdf" />
+            <span>Andrew CV</span>
+        </button>
+
+        <button class="icon" data-window="about-window" data-type="card">
+            <img src="assets/icons/Aboutme.png" alt="About Andrew" />
+            <span>About Me</span>
+        </button>
+
+        <button class="icon" data-window="cmd-window" data-type="app">
+            <img src="assets/icons/arch.png">
+            <span>Terminal</span>
+        </button>
+
+        <button class="icon" data-window="explorer-window" data-type="app">
+            <img src="assets/icons/File.png" alt="Files" />
+            <span>Files</span>
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- WINDOWS -->
+
+<div class="window hidden window-social" id="git-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>GitHub</span>
+    </div>
+
+    <div class="window-body github-body">
+        
+        <!-- GitHub Profile Container -->
+        <div class="github-profile-container">
+            
+            <!-- Left Column -->
+            <div class="github-left-column">
+                
+                <!-- Avatar -->
+                <div class="github-avatar-container">
+                    <img src="assets/images/Andrew.jpg" alt="Profile" class="github-avatar">
+                </div>
+
+                <!-- Username -->
+                <h3 class="github-username">andrew-fernando-15</h3>
+
+                <!-- Join Date -->
+                <p class="github-join-date">Joined 2024</p>
+
+            </div>
+
+            <!-- Right Column -->
+            <div class="github-right-column">
+                
+                <!-- Full Name -->
+                <h2 class="github-full-name">Andrew Amirtharaj Fernando</h2>
+
+                <!-- Bio -->
+                <p class="github-bio">
+                    AI Engineer • Web Developer<br>
+                    Building intelligent tools and creative software.
+                </p>
+
+                <!-- Stats -->
+                <div class="github-stats">
+                    <div class="github-stat-item">
+                        <span class="github-stat-number">6</span>
+                        <span class="github-stat-label">repositories</span>
+                    </div>
+                    <span class="github-stat-separator">•</span>
+                    <div class="github-stat-item">
+                        <span class="github-stat-number">5</span>
+                        <span class="github-stat-label">followers</span>
+                    </div>
+                    <span class="github-stat-separator">•</span>
+                    <div class="github-stat-item">
+                        <span class="github-stat-number">5</span>
+                        <span class="github-stat-label">following</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="github-action-buttons">
+                    <button class="github-btn github-btn-projects" id="github-view-projects">View Projects</button>
+                    <button class="github-btn github-btn-message" id="github-message">Message</button>
+                    <button class="github-btn github-btn-open" id="github-open">Open GitHub</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="window hidden window-social" id="portfolio-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Projects</span>
+    </div>
+
+    <div class="window-body portfolio-body">
+
+        <div class="portfolio-tabs" id="portfolio-tabs">
+            <button class="tab-btn active" data-filter="all">All</button>
+            <button class="tab-btn" data-filter="desktop-os">Desktop OS</button>
+            <button class="tab-btn" data-filter="experiments">Experiments</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid">
+            
+            <!-- Project Card : Samurai OS -->
+            <div class="project-card" data-category="desktop-os">
+                <div class="project-preview">
+                    <img src="assets/images/homescreen.png" alt="Samurai OS Desktop" class="project-image">
+                </div>
+                <div class="project-brief">
+                    <h3 class="project-title">Andrew OS</h3>
+                    <p class="project-description">A web-based operating system interface with a minimal Samurai aesthetic, featuring draggable windows, a taskbar, and built-in apps.</p>
+                </div>
+                <div class="project-expanded" style="display: none;">
+                    <img src="assets/images/homescreen.png" alt="Samurai OS Desktop" class="project-expanded-image">
+                    <h3>Samurai OS</h3>
+                    <p>
+                    Samurai OS is a browser-based desktop environment that simulates an operating system experience.
+                    It features a desktop layout with icons, draggable application windows, a taskbar, and built-in tools
+                    like a terminal and interactive apps. The project focuses on recreating the feel of a lightweight
+                    operating system while running entirely in the browser.
+                    </p>
+                    <p>
+                    The interface is inspired by classic desktop environments while maintaining a clean and modern
+                    Samurai-themed design. Users can open applications inside the desktop, interact with windows,
+                    and explore different features without leaving the page.
+                    </p>
+                    <p class="tech-stack">
+                        <strong>Tech:</strong> HTML, CSS, JavaScript
+                    </p>
+                    <div class="project-buttons">
+                        <a href="https://andrew-fernando-15.github.io/Portfolio-3/" target="_blank" class="project-btn live-btn">
+                            Live Project
+                        </a>
+                        <a href="https://github.com/Andrew-Fernando-15/" target="_blank" class="project-btn github-btn">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card" data-category="desktop-os">
+                <div class="project-preview">
+                    <img src="assets/images/WinXP.png" alt="AndrewXP - Windows XP Web Desktop" class="project-image">
+                </div>
+                <div class="project-brief">
+                    <h3 class="project-title">AndrewXP - Windows XP Web Desktop</h3>
+                    <p class="project-description">A nostalgic Windows XP style web desktop with Start Menu, draggable windows, and a command prompt.</p>
+                </div>
+                <div class="project-expanded" style="display: none;">
+                    <img src="assets/images/WinXp.png" alt="AndrewXP - Windows XP Web Desktop" class="project-expanded-image">
+                    <h3>AndrewXP - Windows XP Web Desktop</h3>
+                    <p>A nostalgic Windows XP style web desktop recreated in the browser. It includes a working Start Menu, draggable windows, classic UI elements, and a command prompt to simulate the Windows XP experience.</p>
+                    <p class="tech-stack"><strong>Tech:</strong> HTML5, CSS3, JavaScript</p>
+                    <div class="project-buttons">
+                        <a href="https://Andrew-Fernando-15.github.io/Portfolio-Win-Xp/intro.html" target="_blank" class="project-btn live-btn">Live</a>
+                        <a href="https://github.com/Andrew-Fernando-15/Portfolio-Win-Xp-" target="_blank" class="project-btn github-btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card" data-category="experiments">
+                <div class="project-preview">
+                    <img src="assets/images/Grow.png" alt="AndrewXP - Windows XP Web Desktop" class="project-image">
+                </div>
+                <div class="project-brief">
+                    <h3 class="project-title">Click to Grow Flower</h3>
+                    <p class="project-description">Click anywhere on the canvas to grow a new flower, and use the “clean the screen” button to reset the canvas.</p>
+                </div>
+                <div class="project-expanded" style="display: none;">
+                    <img src="assets/images/Grow.png" alt="Click" class="project-expanded-image">
+                    <h3>Click to Grow Flower</h3>
+                    <p>An interactive WebGL sketch where you draw with procedural flowers using a custom GLSL fragment shader and Three.js.
+Click anywhere on the canvas to grow a new flower, and use the “clean the screen” button to reset the canvas. Click or tap anywhere to grow randomized flowers with stems on a full-screen canvas.
+                    </p>
+                    <p class="tech-stack"><strong>Tech:</strong> HTML5, CSS3, JavaScript</p>
+                    <div class="project-buttons">
+                        <a href="https://Andrew-Fernando-15.github.io/Click-to-grow-flower/" target="_blank" class="project-btn live-btn">Live</a>
+                        <a href="https://github.com/Andrew-Fernando-15/Click-to-grow-flower" target="_blank" class="project-btn github-btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="window hidden window-app" id="blog-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Blog</span>
+    </div>
+
+    <div class="window-body">
+        <p>Blog posts.</p>
+    </div>
+
+</div>
+
+<!-- ABOUT ME CARD WINDOW -->
+<div class="window hidden window-card" id="about-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>About</span>
+    </div>
+
+    <div class="window-body">
+        <!-- Card container with perspective for 3D flip -->
+        <div class="card-container" style="perspective: 1000px; width: 420px; height: 240px; margin: auto;">
+
+            <div class="card" id="aboutCard">
+
+                <!-- FRONT SIDE -->
+                <div class="card-face card-front">
+                    <div class="card-left">
+                        <img src="assets/images/logo.png" alt="Logo" class="card-logo">
+                    </div>
+                    <div class="card-right">
+                        <h2 class="card-name">Andrew Fernando</h2>
+                        <p class="card-role">Developer / Student</p>
+                    </div>
+                    <button class="flip-btn front-arrow" aria-label="Flip to back" onclick="flipCard()">→</button>
+                </div>
+
+                <!-- BACK SIDE -->
+                <div class="card-face card-back">
+                    <h3 class="card-back-name">Andrew Amirtharaj Fernando</h3>
+                    <p class="card-label">About / Contact</p>
+                    <div class="card-info">
+                        <p><b>Status:</b>    Student</p>
+                        <p><b>GitHub:</b>Andrew-Fernando-15</p>
+                        <p><b>LinkedIn:</b>linkedin.com/in/andrew-fernando</p>
+                        <p><b>Contact:</b>andrewafdo@gmail.com</p>
+                        <p><b>Location:</b> Mumbai, Maharashtra, India</p>
+                    </div>
+                    <button class="flip-btn back-arrow" aria-label="Flip to front" onclick="flipCard()">←</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="window hidden window-app" id="cmd-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Command Prompt</span>
+    </div>
+
+    <div class="window-body cmd-body">
+
+        <div id="cmd-output"></div>
+
+        <div class="cmd-input-line">
+            <span>C:\></span>
+            <input id="cmd-input" autocomplete="off">
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="window hidden window-app" id="cv-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Andrew CV</span>
+    </div>
+
+    <div class="window-body">
+        <p>CV document - Click to download:</p>
+        <a href="assets/Docs/AndrewFernandoCV.pdf" style="color: #7e4fd4; text-decoration: none;">AndrewFernandoCV.pdf</a>
+    </div>
+
+</div>
+
+
+<div class="window hidden window-social" id="linkedin-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>LinkedIn</span>
+    </div>
+
+    <div class="window-body linkedin-body">
+        
+        <!-- Cover Banner -->
+        <div class="linkedin-cover-banner"></div>
+
+        <!-- Profile Section -->
+        <div class="linkedin-profile-section">
+            
+            <!-- Profile Image -->
+            <div class="linkedin-profile-pic-container">
+                <img src="assets/images/Andrew.jpg" alt="Profile" class="linkedin-profile-pic">
+            </div>
+
+            <!-- Profile Info -->
+            <div class="linkedin-profile-info">
+                <h2 class="linkedin-name">Andrew Amirtharaj Fernando</h2>
+                <p class="linkedin-headline">Computer Engineering Student | AI Developer | AI Enthusiast</p>
+                
+                <div class="linkedin-location-connections">
+                    <span class="linkedin-location">Mumbai, India</span>
+                    <span class="linkedin-bullet">•</span>
+                    <span class="linkedin-connections">500+ connections</span>
+                </div>
+
+                <p class="linkedin-bio">
+                    I turn ideas into intelligent tools.<br>AI engineer exploring where code learns and systems think.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="linkedin-action-buttons">
+                    <button class="linkedin-btn linkedin-btn-connect" id="linkedin-connect">Connect</button>
+                    <button class="linkedin-btn linkedin-btn-message" id="linkedin-message">Message</button>
+                    <button class="linkedin-btn linkedin-btn-portfolio" id="linkedin-portfolio">View Portfolio</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="window hidden window-social" id="instagram-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Instagram</span>
+    </div>
+
+    <div class="window-body instagram-body">
+        
+        <!-- Profile Header -->
+        <div class="instagram-profile-header">
+            <div class="profile-pic-container">
+                <img src="assets/images/User-0.png" alt="Profile" class="profile-pic">
+            </div>
+            
+            <div class="profile-info">
+                <div class="username-section">
+                    <h2 class="username">andrew__263739</h2>
+                </div>
+                
+                <div class="stats-section">
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Posts</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">176</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">226</span>
+                        <span class="stat-label">Following</span>
+                    </div>
+                </div>
+                
+                <div class="bio-section">
+                    <p class="bio-title">Student Developer</p>
+                    <p class="bio-text">Computer Engineer</p>
+                    <p class="bio-text">AI Projects</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="instagram-view-work">View Work</button>
+                    <button class="btn btn-neutral" id="instagram-message">Message</button>
+                    <button class="btn btn-outline" id="instagram-open">Open Instagram</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+
+<div class="window hidden window-app" id="explorer-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>File Explorer</span>
+    </div>
+
+    <div class="window-body explorer-body">
+        <!-- Toolbar -->
+        <div class="explorer-toolbar">
+            <button class="explorer-btn" id="explorer-back">⬅ Back</button>
+            <button class="explorer-btn" id="explorer-new">➕ New</button>
+            <button class="explorer-btn" id="explorer-sort">🔤 Sort</button>
+            <button class="explorer-btn" id="explorer-view">📊 View</button>
+            <input type="text" class="explorer-search" placeholder="Search this PC...">
+        </div>
+
+        <!-- Main Container with Sidebar and File Area -->
+        <div class="explorer-container">
+            <!-- Sidebar -->
+            <div class="explorer-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Quick Access</div>
+                    <div class="sidebar-item" data-nav="Desktop">📁 Desktop</div>
+                    <div class="sidebar-item" data-nav="Downloads">📁 Downloads</div>
+                    <div class="sidebar-item" data-nav="Documents">📁 Documents</div>
+                    <div class="sidebar-item" data-nav="Pictures">📁 Pictures</div>
+                    <div class="sidebar-item" data-nav="Music">📁 Music</div>
+                    <div class="sidebar-item" data-nav="Videos">📁 Videos</div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-title">System</div>
+                    <div class="sidebar-item" data-nav="ThisPC">💻 This PC</div>
+                    <div class="sidebar-item" data-nav="Network">🌐 Network</div>
+                </div>
+            </div>
+
+            <!-- File Area -->
+            <div class="explorer-main">
+                <!-- Breadcrumb -->
+                <div class="explorer-breadcrumb" id="explorer-breadcrumb">
+                    This PC
+                </div>
+                
+                <!-- File Grid -->
+                <div class="explorer-grid" id="file-system"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="window hidden window-app" id="grow-window">
+
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Click To Grow</span>
+    </div>
+
+    <div class="window-body grow-body">
+        <iframe
+            src="https://andrew-fernando-15.github.io/Click-to-grow-flower/"
+            class="grow-iframe">
+        </iframe>
+    </div>
+
+</div>
+
+
+<!-- GAMES WINDOW -->
+<div class="window hidden window-app" id="games-window">
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Games</span>
+    </div>
+    <div class="window-body portfolio-body">
+        <div class="portfolio-grid">
+
+            <div class="project-card" id="launch-tetris">
+                <div class="project-preview">
+                    <img src="assets/images/tetris.jfif" class="project-image">
+                </div>
+                <div class="project-brief">
+                    <h3 class="project-title">Tetris</h3>
+                    <p class="project-description">Classic block stacking puzzle game. Stack and clear lines to score!</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="launch-snake">
+                <div class="project-preview">
+                    <img src="assets/images/snake.jfif" class="project-image">
+                </div>
+                <div class="project-brief">
+                    <h3 class="project-title">Snake</h3>
+                    <p class="project-description">Guide the snake, eat the food, don't hit the walls!</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="launch-connect4">
+                <div class="project-preview">
+                    <img src="assets/images/connect4.jfif" class="project-image">
+                </div>
+                <div class="project-brief">
+                    <h3 class="project-title">Connect 4</h3>
+                    <p class="project-description">Drop your discs, connect four in a row to win!</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="launch-wordattack">
+                <div class="project-preview">
+                    <img src="assets/images/type.jfif" class="project-image">
+                </div>
+                <div class="project-brief">
+                    <h3 class="project-title">Word Attack</h3>
+                    <p class="project-description">Form words from letters to score points!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- TETRIS WINDOW -->
+<div class="window hidden window-app" id="tetris-window">
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Tetris</span>
+    </div>
+    <div class="window-body game-body">
+        <iframe src="https://Andrew-Fernando-15.github.io/Projects/tetris-game/index.html" class="game-iframe"></iframe>
+    </div>
+</div>
+
+<!-- SNAKE WINDOW -->
+<div class="window hidden window-app" id="snake-window">
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Snake</span>
+    </div>
+    <div class="window-body game-body">
+        <iframe src="https://Andrew-Fernando-15.github.io/Projects/snake-game/index.html" class="game-iframe"></iframe>
+    </div>
+</div>
+
+<!-- CONNECT4 WINDOW -->
+<div class="window hidden window-app" id="connect4-window">
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Connect 4</span>
+    </div>
+    <div class="window-body game-body">
+        <iframe src="https://Andrew-Fernando-15.github.io/Projects/connect4-game/index.html" class="game-iframe"></iframe>
+    </div>
+</div>
+
+<div class="window hidden window-app" id="wordattack-window">
+    <div class="window-header">
+        <div class="window-controls">
+            <button class="close-btn close"></button>
+            <button class="min-btn minimize"></button>
+            <button class="max-btn maximize"></button>
+        </div>
+        <span>Word Attack</span>
+    </div>
+    <div class="window-body game-body">
+        <iframe src="https://Andrew-Fernando-15.github.io/Projects/wordattack-game/index.html" class="game-iframe"></iframe>
+    </div>
+</div>
+
+
+<!-- TASKBAR -->
+
+<div class="taskbar">
+
+    <button id="start-button" class="taskbar-icon">
+        <img src="assets/images/logo.png">
+    </button>
+
+    <div class="input-wrapper" id="task-search">
+
+        <button class="search-icon" id="search-toggle">
+            🔍
+        </button>
+
+        <input placeholder="Search..." class="input" type="text">
+
+    </div>
+
+    <div id="taskbar-apps"></div>
+
+</div>
+
+
+<!-- START MENU -->
+
+<div id="start-menu">
+
+    <div class="start-top">
+        <input type="text" placeholder="Search Samurai OS...">
+    </div>
+
+    <div class="start-grid">
+
+        <button class="icon" data-window="about-window" data-type="card">
+            <img src="assets/icons/Aboutme.png">
+            <span>About</span>
+        </button>
+
+        <button class="icon" data-window="cv-window" data-type="app">
+            <img src="assets/icons/pdf.png">
+            <span>Andrew CV</span>
+        </button>
+
+        <button class="icon" data-window="portfolio-window" data-type="social">
+            <img src="assets/icons/project.png">
+            <span>Project</span>
+        </button>
+
+        <button class="icon" data-window="blog-window" data-type="app">
+            <img src="assets/icons/blog.png">
+            <span>Blog</span>
+        </button>
+
+        <button class="icon" data-window="cmd-window" data-type="app">
+            <img src="assets/icons/arch.png">
+            <span>Terminal</span>
+        </button>
+
+        <button class="icon" data-window="grow-window" data-type="app">
+            <img src="assets/icons/flower.png">
+            <span>Click To Grow</span>
+        </button>
+
+        <button class="icon" data-window="git-window" data-type="social">
+            <img src="assets/icons/git.png">
+            <span>GitHub</span>
+        </button>
+
+        <button class="icon" data-window="linkedin-window" data-type="social">
+            <img src="assets/icons/linkedin.png">
+            <span>LinkedIn</span>
+        </button>
+
+        <button class="icon" data-window="instagram-window" data-type="social">
+            <img src="assets/icons/Instagram.png">
+            <span>Instagram</span>
+        </button>
+
+        <button class="icon" data-window="explorer-window" data-type="app">
+            <img src="assets/icons/File.png">
+            <span>Files</span>
+        </button>
+
+        <button class="icon" data-window="games-window" data-type="app">
+            <img src="assets/icons/game.png">
+            <span>Games</span>
+        </button>
+
+    </div>
+
+    <div class="start-bottom">
+        <button>Settings</button>
+        <button>Power</button>
+    </div>
+
+</div>
+<div id="desktop-menu" class="taskbar-menu">
+
+<button onclick="location.reload()">Refresh</button>
+
+<button onclick="alert('Create Folder coming soon')">
+New Folder
+</button>
+
+<button onclick="alert('Settings coming soon')">
+Settings
+</button>
+
+<button onclick="openAbout()">
+About Samurai OS
+</button>
+
+</div>
+
+<script src="js/homescreen.js"></script>
+
+</body>
+</html>
